@@ -57,26 +57,24 @@
     
     /* ... (keep all other existing styles the same) ... */
 
+    
     .image-wrapper {
         margin: 40px 0;
         position: relative;
         box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         border-radius: 4px;
-        overflow: hidden;
-        /* Add container aspect-ratio if needed */
+        /* REMOVE overflow: hidden */
+        display: inline-block; /* New - makes wrapper shrink to image size */
+        width: 100%; /* Ensures full width within parent constraints */
     }
 
     img {
-        width: 100%;
-        height: auto; /* Remove fixed height */
-        display: block; /* Remove extra space below image */
+        width: auto; /* Change from 100% */
+        max-width: 100%; /* Prevent horizontal overflow */
+        height: auto;
+        display: block;
         border-radius: 4px;
-        /* Remove object-fit: cover */
-    }
-
-    /* For specific aspect ratio containers (optional) */
-    .image-wrapper.ratio-16-9 {
-        aspect-ratio: 16/9;
+        margin: 0 auto; /* Center images */
     }
 
 
